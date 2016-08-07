@@ -60,6 +60,60 @@ def main():
       if result is not None:
         result_list.append(json.dumps(result))
         result = None
+    
+    
+    elif entity_type == "LOCATION":
+      result = api_freebase.obtain(term, entity_type)
+      if result is not None:
+        result_list.append(json.dumps(result))
+        result = None
+        
+      result = api_googlemaps.obtain(term, entity_type)
+      if result is not None:
+        result_list.append(json.dumps(result))
+        result = None
+        
+      result = api_youtube.obtains(term, entity_type)
+      if result is not None:
+        result_list.append(json.dumps(result))
+        result = None
+        
+      result = api_yelp.obtains(term, entity_type)
+      if result is not None:
+        result_list.append(json.dumps(result))
+        result = None
+        
+      result = api_twitter.obtains(term, entity_type)
+      if result is not None:
+        result_list.append(json.dumps(result))
+        result = None
+        
+      result = api_wikipedia.obtains(term, entity_type)
+      if result is not None:
+        result_list.append(json.dumps(result))
+        result = None
+    
+    
+    elif entity_type == "ORGANIZATION":
+      result = api_freebase.obtain(term, entity_type)
+      if result is not None:
+        result_list.append(json.dumps(result))
+        result = None
+        
+      result = api_twitter.obtain(term, entity_type)
+      if result is not None:
+        result_list.append(json.dumps(result))
+        result = None
+        
+      result = api_youtube.obtains(term, entity_type)
+      if result is not None:
+        result_list.append(json.dumps(result))
+        result = None
+        
+      result = api_wikipedia.obtains(term, entity_type)
+      if result is not None:
+        result_list.append(json.dumps(result))
+        result = None
       
   print result_list
 
