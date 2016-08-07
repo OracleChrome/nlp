@@ -13,7 +13,10 @@ import api_yelp
 import api_youtube
 
 
-dotenv.load_dotenv(os.path.realpath('./.env'))
+dotenv.load_dotenv(
+  os.path.join(os.path.dirname(__file__), 
+               './.env')
+)
 
 def main():
   _, payload = sys.argv
@@ -33,6 +36,32 @@ def main():
   ner_tuple_list = webpage_process.reduce_neighbors(ner_tuple_list)
   picked_ner_tuple_list = webpage_process.pick_most_important(ner_tuple_list, 20)
   
+  result_list = []
+  for ner_tuple in picked_ner_tuple_list:
+    term, entity_type = ner_tuple
+    
+    if entity_type == "PERSON":
+      result = api_freebase.obtain(term, entity_type)
+      if result is not None:
+        result_list.append(json.dumps(result))
+        result = None
+      
+      result = api_youtube.obtain(term, entity_type)
+      if result is not None:
+        result_list.append(json.dumps(result))
+        result = None
+      
+      result = api_wikipedia.obtain(term, entity_type)
+      if result is not None:
+        result_list.append(json.dumps(result))
+        result = None
+      
+      result = api_twitter.obtain(term, entity_type)
+      if result is not None:
+        result_list.append(json.dumps(result))
+        result = None
+      
+  print result_list
 
 if __name__ == "__main__":
   main()

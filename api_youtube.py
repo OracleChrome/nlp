@@ -5,12 +5,12 @@ from googleapiclient.errors import HttpError
 from oauth2client.tools import argparser
 import pydash as _
 
-
-DEVELOPER_KEY = os.getenv('YOUTUBE_API_KEY')
-YOUTUBE_API_SERVICE_NAME = "youtube"
-YOUTUBE_API_VERSION = "v3"
-
 def obtain(search_term, category):
+  DEVELOPER_KEY = os.getenv("YOUTUBE_API_KEY")
+  YOUTUBE_API_SERVICE_NAME = "youtube"
+  YOUTUBE_API_VERSION = "v3"
+  
+  print DEVELOPER_KEY
   
   try:
     youtube = build(
@@ -27,7 +27,7 @@ def obtain(search_term, category):
       part="id,snippet",
       maxResults=1
     ).execute()
-  except HttpError:
+  except HttpError as e:
     return None
   
   video_list = search_response.get("items", [])

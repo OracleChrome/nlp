@@ -2,12 +2,12 @@ import os
 
 import twitter
 
-consumer_key = os.getenv('TWITTER_CONSUMER_KEY')
-consumer_secret = os.getenv('TWITTER_CONSUMER_SECRET')
-access_token_key = os.getenv('TWITTER_TOKEN')
-access_token_secret = os.getenv('TWITTER_TOKEN_SECRET')
-
 def obtain(search_term, category):
+  
+  consumer_key = os.getenv('TWITTER_CONSUMER_KEY')
+  consumer_secret = os.getenv('TWITTER_CONSUMER_SECRET')
+  access_token_key = os.getenv('TWITTER_TOKEN')
+  access_token_secret = os.getenv('TWITTER_TOKEN_SECRET')
   
   api = twitter.Api(
     consumer_key=consumer_key,

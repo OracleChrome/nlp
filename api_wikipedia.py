@@ -10,7 +10,7 @@ def obtain(search_term, category):
     return None
   
   wimages = wpage.images
-  wimages_length = len(wimages_length)
+  wimages_length = len(wimages)
   if wimages_length <= 6:
     wimages = []
   wimages = _.drop_right(

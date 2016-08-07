@@ -6,11 +6,11 @@ import requests.packages.urllib3
 import pydash as _
 
 
-api_key = os.getenv('FREEBASE_API_KEY', '')
-requests.packages.urllib3.disable_warnings()
-
 def obtain(search_term, category):
   
+  api_key = os.getenv('FREEBASE_API_KEY')
+  requests.packages.urllib3.disable_warnings()
+
   params = {
     'query': search_term,
     'output': '(description)'
@@ -20,7 +20,7 @@ def obtain(search_term, category):
     
   
   request = requests.get(
-    'https://www.googleapis.com/freebase/v1/search', params, verify=False
+    'http://www.googleapis.com/freebase/v1/search', params, verify=False
   )
   if request.status_code != requests.codes.ok:
     return None
