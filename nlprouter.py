@@ -115,7 +115,7 @@ def main():
         result_list.append(json.dumps(result))
         result = None
       
-  print result_list
+  print json.dumps(result_list)
 
 if __name__ == "__main__":
   main()

@@ -20,7 +20,7 @@ def obtain(search_term, category):
     
   
   request = requests.get(
-    'http://www.googleapis.com/freebase/v1/search', params, verify=False
+    'https://www.googleapis.com/freebase/v1/search', params, verify=False
   )
   if request.status_code != requests.codes.ok:
     return None

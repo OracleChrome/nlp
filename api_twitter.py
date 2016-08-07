@@ -22,8 +22,6 @@ def obtain(search_term, category):
     )
   except BaseException:
     return None
-  
-  print tweets[0].user
 
   return {
     "metadata": {

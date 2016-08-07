@@ -10,8 +10,6 @@ def obtain(search_term, category):
   YOUTUBE_API_SERVICE_NAME = "youtube"
   YOUTUBE_API_VERSION = "v3"
   
-  print DEVELOPER_KEY
-  
   try:
     youtube = build(
       YOUTUBE_API_SERVICE_NAME, 
