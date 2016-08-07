@@ -4,12 +4,15 @@ import pydash as _
 
 def obtain(search_term, category):
   
-  wpage = wikipedia.WikipediaPage(title=search_term)
-  wimages = wpage.images
+  try:
+    wpage = wikipedia.WikipediaPage(title=search_term)
+  except BaseException:
+    return None
   
+  wimages = wpage.images
   wimages_length = len(wimages_length)
   if wimages_length <= 6:
-    return []
+    wimages = []
   wimages = _.drop_right(
     wimages,
     wimages_length - 6
