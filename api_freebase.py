@@ -9,7 +9,7 @@ import pydash as _
 api_key = os.getenv('FREEBASE_API_KEY', '')
 requests.packages.urllib3.disable_warnings()
 
-def obtain(search_term):
+def obtain(search_term, category):
   
   params = {
     'query': search_term,
@@ -31,10 +31,16 @@ def obtain(search_term):
     return None
   
   return {
-    "name": _.get(payload, 'result.0.name', None),
-    "description": _.get(
-      payload, 
-      "result.0.output.description./common/topic/description.0"
-    ),
-    "images": []
+    "metadata": {
+      "type": "freebase-information",
+      "term": search_term,
+      "category": category
+    },
+    "data": {
+      "name": _.get(payload, 'result.0.name', None),
+      "description": _.get(
+        payload, 
+        "result.0.output.description./common/topic/description.0"
+      )
+    }
   }
