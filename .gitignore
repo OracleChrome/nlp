@@ -1,2 +1,4 @@
 *.pyc
 .venv
+.DS_Store
+stanford-ner/*
