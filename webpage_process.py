@@ -17,6 +17,8 @@ stanford_tagger = StanfordNERTagger(path_sner_model, path_sner_jar)
 
 """
 Strips out HTML tags
+@param webpage_data:string
+@returns string
 """
 def cleanse_tags(webpage_data):
   return BeautifulSoup(webpage_data, "html.parser").get_text()
