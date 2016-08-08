@@ -27,7 +27,7 @@ def obtain(search_term, category):
     "metadata": {
       "type": "twitter-tweet",
       "term": search_term,
-      "category": "category"
+      "category": category
     },
     "data": {
       "author": tweets[0].user.name,
