@@ -65,6 +65,8 @@ def reduce_neighbors(ner_tuple_list=[]):
 """
 Pick the most 'important' items of count size from ner_tuple_list,
   shortening it to count size. Only unique items are obtained.
+@param ner_tuple_list:[(string, tag)]
+@returns [(string, tag)]
 """
 def pick_most_important(ner_tuple_list=[], count=0):
   
