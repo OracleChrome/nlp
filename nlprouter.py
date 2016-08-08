@@ -73,22 +73,22 @@ def main():
         result_list.append(json.dumps(result))
         result = None
         
-      result = api_youtube.obtains(term, entity_type)
+      result = api_youtube.obtain(term, entity_type)
       if result is not None:
         result_list.append(json.dumps(result))
         result = None
         
-      result = api_yelp.obtains(term, entity_type)
+      result = api_yelp.obtain(term, entity_type)
       if result is not None:
         result_list.append(json.dumps(result))
         result = None
         
-      result = api_twitter.obtains(term, entity_type)
+      result = api_twitter.obtain(term, entity_type)
       if result is not None:
         result_list.append(json.dumps(result))
         result = None
         
-      result = api_wikipedia.obtains(term, entity_type)
+      result = api_wikipedia.obtain(term, entity_type)
       if result is not None:
         result_list.append(json.dumps(result))
         result = None
@@ -105,12 +105,12 @@ def main():
         result_list.append(json.dumps(result))
         result = None
         
-      result = api_youtube.obtains(term, entity_type)
+      result = api_youtube.obtain(term, entity_type)
       if result is not None:
         result_list.append(json.dumps(result))
         result = None
         
-      result = api_wikipedia.obtains(term, entity_type)
+      result = api_wikipedia.obtain(term, entity_type)
       if result is not None:
         result_list.append(json.dumps(result))
         result = None
