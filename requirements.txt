@@ -2,7 +2,7 @@ apiclient==1.0.3
 beautifulsoup4==4.5.1
 cffi==1.7.0
 click==6.6
-cryptography==1.4
+cryptography==3.2
 enum34==1.1.6
 future==0.15.2
 google-api-python-client==1.5.1
